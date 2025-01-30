@@ -1,25 +1,281 @@
-/* AnimatedBackground.css */
-.animated-background {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1; /* Place behind all other elements */
-    background: linear-gradient(135deg, #f0f8ff, #ffe4e1, #fafad2, #e0ffff);
-    background-size: 300% 300%;
-    animation: gradientAnimation 8s ease infinite;
+/* Full-screen animated background with circular shapes */
+body {
+  margin: 0;
+  padding: 0;
+  overflow-y: scroll;  /* Ensure scrolling */
+  height: 100vh; /* Ensure the body covers full viewport */
+  background: rgba(239, 196, 217, 0.5); /* Slightly darker pink background */
+}
+
+/* Animated background gradient */
+* {
+  box-sizing: border-box;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Places it behind all other content */
+  background: linear-gradient(135deg, #d8a4d0, #9e4e9f, #b7a1cb, #e7c7d1);
+  background-size: 300% 300%;
+  animation: gradientAnimation 8s ease infinite;
+}
+
+/* Animation for the gradient */
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
   }
-  
-  @keyframes gradientAnimation {
-    0% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-    100% {
-      background-position: 0% 50%;
-    }
+  50% {
+    background-position: 100% 50%;
   }
-  
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Circular shapes with darker tones */
+body::after {
+  content: '';
+  position: absolute;
+  top: 5%;
+  left: 15%;
+  width: 150px;
+  height: 150px;
+  background: rgba(128, 0, 128, 0.5); /* Darker purple circle */
+  border-radius: 50%;
+  animation: moveCircle 5s ease-in-out infinite, rotateCircle 10s linear infinite, skewCircle 8s ease-in-out infinite;
+}
+
+body::before {
+  content: '';
+  position: absolute;
+  top: 25%;
+  left: 35%;
+  width: 180px;
+  height: 180px;
+  background: rgba(138, 43, 226, 0.4); /* Darker purple circle */
+  border-radius: 50%;
+  animation: moveCircle 5s ease-in-out infinite 1s, scaleUp 6s ease-in-out infinite, bounceCircle 6s ease-in-out infinite;
+}
+
+body::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 55%;
+  width: 200px;
+  height: 200px;
+  background: rgba(255, 20, 147, 0.4); /* Dark pink circle */
+  border-radius: 50%;
+  animation: moveCircle 5s ease-in-out infinite 2s, opacityChange 6s ease-in-out infinite, skewCircle 8s ease-in-out infinite;
+}
+
+body::before {
+  content: '';
+  position: absolute;
+  top: 70%;
+  left: 80%;
+  width: 220px;
+  height: 220px;
+  background: rgba(255, 105, 180, 0.5); /* Darker pink circle */
+  border-radius: 50%;
+  animation: moveCircle 5s ease-in-out infinite 3s, moveHorizontal 8s ease-in-out infinite, bounceCircle 7s ease-in-out infinite;
+}
+
+body::after {
+  content: '';
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  width: 160px;
+  height: 160px;
+  background: rgba(186, 85, 211, 0.5); /* Darker purple circle */
+  border-radius: 50%;
+  animation: moveCircle 5s ease-in-out infinite 4s, scaleDown 7s ease-in-out infinite, skewCircle 8s ease-in-out infinite;
+}
+
+/* Add more circles */
+body::before {
+  content: '';
+  position: absolute;
+  top: 15%;
+  left: 5%;
+  width: 130px;
+  height: 130px;
+  background: rgba(255, 69, 0, 0.4); /* Darker orange circle */
+  border-radius: 50%;
+  animation: moveCircle 5s ease-in-out infinite 5s, opacityChange 7s ease-in-out infinite, bounceCircle 6s ease-in-out infinite;
+}
+
+body::after {
+  content: '';
+  position: absolute;
+  top: 45%;
+  left: 25%;
+  width: 190px;
+  height: 190px;
+  background: rgba(0, 255, 255, 0.4); /* Cyan circle */
+  border-radius: 50%;
+  animation: moveCircle 5s ease-in-out infinite 6s, rotateCircle 8s linear infinite, skewCircle 8s ease-in-out infinite;
+}
+
+body::before {
+  content: '';
+  position: absolute;
+  top: 60%;
+  left: 70%;
+  width: 220px;
+  height: 220px;
+  background: rgba(255, 0, 106, 0.5); /* Yellow circle */
+  border-radius: 50%;
+  animation: moveCircle 5s ease-in-out infinite 7s, moveVertical 6s ease-in-out infinite, bounceCircle 6s ease-in-out infinite;
+}
+
+body::after {
+  content: '';
+  position: absolute;
+  top: 10%;
+  left: 75%;
+  width: 170px;
+  height: 170px;
+  background: rgba(255, 99, 71, 0.5); /* Tomato red circle */
+  border-radius: 50%;
+  animation: moveCircle 5s ease-in-out infinite 8s, scaleUp 7s ease-in-out infinite, bounceCircle 6s ease-in-out infinite;
+}
+
+/* Pulsing circle animation */
+@keyframes moveCircle {
+  0% {
+    transform: scale(0.8);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(0.8);
+  }
+}
+
+/* Additional animations */
+
+/* Rotate animation */
+@keyframes rotateCircle {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Scale Up animation */
+@keyframes scaleUp {
+  0% {
+    transform: scale(0.8);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(0.8);
+  }
+}
+
+/* Scale Down animation */
+@keyframes scaleDown {
+  0% {
+    transform: scale(1.2);
+  }
+  50% {
+    transform: scale(0.8);
+  }
+  100% {
+    transform: scale(1.2);
+  }
+}
+
+/* Opacity change animation */
+@keyframes opacityChange {
+  0% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.4;
+  }
+}
+
+/* Horizontal movement animation */
+@keyframes moveHorizontal {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(100px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* Vertical movement animation */
+@keyframes moveVertical {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(100px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* Skew animation */
+@keyframes skewCircle {
+  0% {
+    transform: skew(0deg);
+  }
+  50% {
+    transform: skew(20deg);
+  }
+  100% {
+    transform: skew(0deg);
+  }
+}
+
+/* Bounce animation */
+@keyframes bounceCircle {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-30px);
+  }
+}
+
+/* Styling the scrollbar */
+::-webkit-scrollbar {
+  width: 10px; /* Set width for the scrollbar */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #9e4e9f; /* Darker purple color for the thumb */
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f0f0f0; /* Light color for the track */
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-corner {
+  background-color: transparent;
+}

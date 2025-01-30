@@ -11,6 +11,15 @@ const projects = [
     tags: ["ReactJs", "API", "MUI", "Googlemap"]
   },
   {
+    title: "Chat Application",
+    description: "A real-time chat app built with ReactJS and Firebase. Users can log in, send messages, share images, and add new users.",
+    githubLink: "https://github.com/vaishnavinimrot/Chat_App",
+    imageUrl: "/img/image.png", 
+    tags: ["ReactJS", "Firebase", "CSS", "Chat", "Authentication", "Image Sharing"]
+  },
+  
+  
+  {
     title: "Paytm",
     description: "A clone of Paytm featuring user authentication, transaction history, wallet integration, and product listings.",
     githubLink: "https://github.com/vaishnavinimrot/paytm.main",
@@ -31,13 +40,12 @@ const projects = [
     imageUrl: "/img/image3.png", 
     tags: ["ReactJS", "CSS"]
   },
-
   {
-    title: "Spotify clone",
-    description: "A clone of Spotify allowing users to browse and play music, create playlists, and search songs by artist or title.",
-    githubLink: "https://github.com/vaishnavinimrot/Spotify-clone",
-    imageUrl: "/img/image6.png", 
-    tags: ["JS", "CSS", "MusicStreaming"]
+  title: "Quiz App",
+  description: "A quiz application that allows users to take quizzes on various topics, track their scores, and challenge their knowledge.",
+  githubLink: "https://github.com/vaishnavinimrot/Quiz-app",
+  imageUrl: "/img/image6.png", 
+  tags: ["ReactJS", "", "Quiz", "Game"]
   },
   {
     title: "Hospital Management System",
